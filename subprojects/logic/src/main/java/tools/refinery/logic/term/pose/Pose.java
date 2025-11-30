@@ -17,6 +17,15 @@ public record Pose( BigDecimal x, BigDecimal y, BigDecimal phi) {
 	public BigDecimal getY() { return y; }
 	public BigDecimal getPhi() { return phi; }
 
+	BigDecimal distance(Pose o)
+	{
+		var dx = this.x.subtract(o.x);
+		var dy = this.y.subtract(o.y);
+		var dx2 = dx.multiply(dx);
+		var dx
+		return Math.sqrt(dx*dx + dy*dy);
+	}
+
 	@Override
 	public String toString() {
 		return x+" "+y+" "+phi;
